@@ -1,5 +1,5 @@
 
-import { Cog, Network, Circuit } from "lucide-react";
+import { Cog, Network, Settings } from "lucide-react";
 
 const services = [
   {
@@ -8,7 +8,7 @@ const services = [
     description: "Innovative solutions for complex mechanical systems and products.",
   },
   {
-    icon: <Circuit className="w-8 h-8 text-accent" />,
+    icon: <Settings className="w-8 h-8 text-accent" />,
     title: "Electrical Engineering",
     description: "Advanced electrical systems design and implementation.",
   },
