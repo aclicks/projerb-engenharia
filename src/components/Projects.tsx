@@ -1,3 +1,4 @@
+
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -8,7 +9,10 @@ const clients = [
     logo: "/lovable-uploads/3aa28eb0-73ee-4349-b079-e0c68c01a3b6.png"
   },
   "Fort Atacadista",
-  "Comper",
+  {
+    name: "Comper",
+    logo: "/lovable-uploads/3192bc54-8ecb-4885-944e-39ee3cdb2d3f.png"
+  },
   "Hannah Engenharia",
   "Egelte Engenharia",
   "Shopping Norte Sul Plaza",
