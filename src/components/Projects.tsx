@@ -1,7 +1,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const clients = [
   "Energisa",
@@ -42,7 +42,7 @@ const Projects = () => {
     loop: true,
     dragFree: true,
     align: 'start',
-    slidesToScroll: 5
+    slidesToScroll: 1
   });
 
   const scrollPrev = useCallback(() => {
@@ -53,15 +53,35 @@ const Projects = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Auto-scroll every 10 seconds
+  // Auto-scroll functionality
   useEffect(() => {
     if (!emblaApi) return;
 
-    const interval = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 10000);
+    const autoplay = () => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0);
+      }
+    };
 
-    return () => clearInterval(interval);
+    // Start the interval
+    const interval = setInterval(autoplay, 10000);
+
+    // Stop on user interaction
+    const onPointerDown = () => {
+      clearInterval(interval);
+    };
+
+    emblaApi.on('pointerDown', onPointerDown);
+
+    // Cleanup
+    return () => {
+      clearInterval(interval);
+      if (emblaApi) {
+        emblaApi.off('pointerDown', onPointerDown);
+      }
+    };
   }, [emblaApi]);
 
   // Split clients into two rows
