@@ -8,10 +8,7 @@ const clients = [
     name: "Energisa",
     logo: "/lovable-uploads/3aa28eb0-73ee-4349-b079-e0c68c01a3b6.png"
   },
-  {
-    name: "Fort Atacadista",
-    logo: "/lovable-uploads/fa471d15-8c03-4fd7-af82-251684916000.png"
-  },
+  "Fort Atacadista",
   {
     name: "Comper",
     logo: "/lovable-uploads/3192bc54-8ecb-4885-944e-39ee3cdb2d3f.png"
@@ -20,10 +17,7 @@ const clients = [
   "Egelte Engenharia",
   "Shopping Norte Sul Plaza",
   "Shopping Bosque dos Ipês",
-  {
-    name: "Casas Bahia",
-    logo: "/lovable-uploads/e16912ff-db61-4ed8-a1c2-9a381cf3d0c6.png"
-  },
+  "Casas Bahia",
   "Usina Laguna (Batayporã)",
   "Autobel",
   {
@@ -43,19 +37,10 @@ const clients = [
   "Lojas Torra",
   "Autódromo Internacional de Campo Grande",
   "Atacadão",
-  {
-    name: "Escolas Harmonia",
-    logo: "/lovable-uploads/9a5f2714-7705-46fd-b8c7-dfa6629428ce.png"
-  },
+  "Escolas Harmonia",
   "Cultivar Agrícola",
-  {
-    name: "Spoleto",
-    logo: "/lovable-uploads/70d58f82-62a2-4e35-998c-134e16c0cfc2.png"
-  },
-  {
-    name: "Imbauba",
-    logo: "/lovable-uploads/ef2c8a66-5423-4091-9c1f-7f69fc77c2b7.png"
-  },
+  "Spoleto",
+  "Imbauba",
   "Alphaville 4",
   "Festival da Carne",
   "Doces Momentos"
@@ -124,7 +109,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="w-32 h-16 object-contain"
+        className="h-12 object-contain"
       />
     );
   };
