@@ -12,7 +12,7 @@ const Stats = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center font-citrine"
+              className="text-center font-['Citrine']"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-4xl md:text-5xl font-bold mb-2 text-accent">
