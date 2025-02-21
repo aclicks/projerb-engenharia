@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-2">CONTACT</h4>
+              <h4 className="font-bold text-lg mb-2">CONTATO</h4>
               <div className="space-y-2 text-white/80">
                 <p>
                   <a 
