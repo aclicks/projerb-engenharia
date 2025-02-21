@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>ENDEREÇO</h4>
-              <p className="text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
+              <p className="text-white/80">
                 R. José Dibo, 63<br />
                 Jardim dos Estados<br />
                 Campo Grande MS
@@ -42,7 +42,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>HORÁRIO DE ATENDIMENTO</h4>
-              <p className="text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
+              <p className="text-white/80">
                 Segunda à sexta<br />
                 8h às 18h
               </p>
@@ -50,7 +50,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>CONTATO</h4>
-              <div className="space-y-2 text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
+              <div className="space-y-2 text-white/80">
                 <p>
                   <a 
                     href="mailto:william@projerb.com.br"
