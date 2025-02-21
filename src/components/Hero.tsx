@@ -1,6 +1,4 @@
 
-import { ArrowRight } from "lucide-react";
-
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center section-padding">
@@ -9,21 +7,11 @@ const Hero = () => {
           Excelência em Engenharia
         </span>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-up">
-          Construindo as Soluções <br />
-          <span className="text-accent">de Engenharia do Amanhã</span>
+          <span className="text-accent">Planeje, projete, proteja.</span>
         </h1>
-        <p className="text-lg md:text-xl text-primary/80 mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          Combinamos pensamento inovador com tecnologia de ponta para resolver desafios complexos de engenharia.
+        <p className="text-lg md:text-xl text-primary/80 mb-8 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          A Projerb Engenharia, é uma empresa de Projetos de Engenharia, que atua no segmento de projetos de prevenção contra incêndio e projetos complementares de engenharia, assim como na gestão de projetos de engenharia, envolvendo o planejamento, elaboração e compatibilização de projetos, proporcionando uma entrega de pacote de projetos ao cliente com redução de conflitos entre eles e melhor otimização para execução da obra.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          <button className="btn-primary flex items-center gap-2">
-            Começar Agora
-            <ArrowRight className="w-4 h-4" />
-          </button>
-          <button className="px-8 py-3 text-primary hover:text-accent transition-colors">
-            Saiba Mais
-          </button>
-        </div>
       </div>
     </section>
   );
