@@ -1,4 +1,3 @@
-
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -50,7 +49,7 @@ const clients = [
   "Cultivar Agrícola",
   {
     name: "Spoleto",
-    logo: "/lovable-uploads/c1029273-de7a-43f1-9fcf-9e9dd6536825.png"
+    logo: "/lovable-uploads/70d58f82-62a2-4e35-998c-134e16c0cfc2.png"
   },
   {
     name: "Imbauba",
@@ -124,7 +123,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="h-12 object-contain"
+        className="w-32 h-16 object-contain"
       />
     );
   };
