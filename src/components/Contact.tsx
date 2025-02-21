@@ -1,4 +1,6 @@
 
+import { MessageSquare } from "lucide-react";
+
 const Contact = () => {
   return (
     <section className="bg-black text-white">
@@ -18,8 +20,9 @@ const Contact = () => {
               href="https://wa.me/5567984093752"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full hover:bg-[#1da851] transition-colors"
             >
+              <MessageSquare className="w-5 h-5" />
               CLIQUE PARA ENVIAR MENSAGEM
             </a>
           </div>
