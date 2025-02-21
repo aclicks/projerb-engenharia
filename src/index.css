@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Citrine';
+  font-family: 'citrine-variable';
   src: url('/fonts/citrine.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
