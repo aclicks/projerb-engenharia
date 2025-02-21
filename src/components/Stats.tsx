@@ -18,7 +18,9 @@ const Stats = () => {
               <div className="text-4xl md:text-5xl font-bold mb-2 text-accent">
                 {stat.number}
               </div>
-              <div className="text-white/80">{stat.label}</div>
+              <div className="text-white/80" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
