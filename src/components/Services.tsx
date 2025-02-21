@@ -34,7 +34,7 @@ const Services = () => {
     <section id="servicos" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Serviços</h2>
+          <h2 className="text-3xl md:text-4xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>Serviços</h2>
           <p className="text-primary/60 max-w-2xl mx-auto">
             Soluções especializadas em segurança contra incêndio e engenharia
           </p>
