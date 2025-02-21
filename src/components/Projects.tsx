@@ -22,9 +22,9 @@ const Projects = () => {
     <section className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projetos em Destaque</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Clientes</h2>
           <p className="text-primary/60 max-w-2xl mx-auto">
-            Conheça nossas últimas conquistas em engenharia
+            Conheça as marcas clientes da Projerb
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
