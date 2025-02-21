@@ -4,16 +4,20 @@ import Services from "../components/Services";
 import Stats from "../components/Stats";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
   return (
-    <main className="overflow-hidden">
-      <Hero />
-      <Services />
-      <Stats />
-      <Projects />
-      <Contact />
-    </main>
+    <>
+      <Navbar />
+      <main className="pt-20 overflow-hidden">
+        <Hero />
+        <Services />
+        <Stats />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   );
 };
 
