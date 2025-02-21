@@ -1,4 +1,3 @@
-
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -17,7 +16,10 @@ const clients = [
   "Casas Bahia",
   "Usina Laguna (Batayporã)",
   "Autobel",
-  "Eletrosul",
+  {
+    name: "Eletrosul",
+    logo: "/lovable-uploads/731f990a-306b-464a-a20f-bd298c7c11d0.png"
+  },
   "Rotele",
   "Lojas Americanas",
   "Universidade Anhanguera",
@@ -56,7 +58,6 @@ const Projects = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Auto-scroll functionality
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -68,17 +69,14 @@ const Projects = () => {
       }
     };
 
-    // Start the interval
     const interval = setInterval(autoplay, 3000);
 
-    // Stop on user interaction
     const onPointerDown = () => {
       clearInterval(interval);
     };
 
     emblaApi.on('pointerDown', onPointerDown);
 
-    // Cleanup
     return () => {
       clearInterval(interval);
       if (emblaApi) {
@@ -87,7 +85,6 @@ const Projects = () => {
     };
   }, [emblaApi]);
 
-  // Create slides with two clients each (one on top of the other)
   const slides = [];
   for (let i = 0; i < clients.length; i += 2) {
     slides.push([
