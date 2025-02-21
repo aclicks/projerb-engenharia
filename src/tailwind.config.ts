@@ -36,6 +36,9 @@ export default {
           dark: "#334866"
         }
       },
+      fontFamily: {
+        citrine: ['Citrine', 'sans-serif']
+      },
       keyframes: {
         "fade-up": {
           "0%": {
