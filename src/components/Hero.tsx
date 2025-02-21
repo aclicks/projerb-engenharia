@@ -9,8 +9,7 @@ const Hero = () => {
           backgroundImage: "url('/lovable-uploads/82d40a3b-bfec-4b52-b35c-25f676b35f61.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.3)'
+          backgroundRepeat: 'no-repeat'
         }}
       />
       
