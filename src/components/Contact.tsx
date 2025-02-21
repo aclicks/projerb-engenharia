@@ -25,14 +25,14 @@ const Contact = () => {
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full hover:bg-[#1da851] transition-colors self-start"
             >
               <MessageSquare className="w-5 h-5" />
-              CLIQUE PARA ENVIAR MENSAGEM
+              <span className="font-citrine font-bold">CLIQUE PARA ENVIAR MENSAGEM</span>
             </a>
           </div>
 
           {/* Right Column */}
           <div className="space-y-8">
             <div>
-              <h4 className="font-bold text-lg mb-2">ENDEREÇO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2">ENDEREÇO</h4>
               <p className="text-white/80">
                 R. José Dibo, 63<br />
                 Jardim dos Estados<br />
@@ -41,7 +41,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-2">HORÁRIO DE ATENDIMENTO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2">HORÁRIO DE ATENDIMENTO</h4>
               <p className="text-white/80">
                 Segunda à sexta<br />
                 8h às 18h
@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-2">CONTATO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2">CONTATO</h4>
               <div className="space-y-2 text-white/80">
                 <p>
                   <a 
