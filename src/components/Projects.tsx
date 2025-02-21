@@ -123,7 +123,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className={`object-contain ${client.name === "Spoleto" ? "w-64 h-32" : "w-32 h-16"}`}
+        className="w-32 h-16 object-contain"
       />
     );
   };
