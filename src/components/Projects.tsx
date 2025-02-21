@@ -8,7 +8,10 @@ const clients = [
     name: "Energisa",
     logo: "/lovable-uploads/3aa28eb0-73ee-4349-b079-e0c68c01a3b6.png"
   },
-  "Fort Atacadista",
+  {
+    name: "Fort Atacadista",
+    logo: "/lovable-uploads/fa471d15-8c03-4fd7-af82-251684916000.png"
+  },
   {
     name: "Comper",
     logo: "/lovable-uploads/3192bc54-8ecb-4885-944e-39ee3cdb2d3f.png"
@@ -17,7 +20,10 @@ const clients = [
   "Egelte Engenharia",
   "Shopping Norte Sul Plaza",
   "Shopping Bosque dos Ipês",
-  "Casas Bahia",
+  {
+    name: "Casas Bahia",
+    logo: "/lovable-uploads/e16912ff-db61-4ed8-a1c2-9a381cf3d0c6.png"
+  },
   "Usina Laguna (Batayporã)",
   "Autobel",
   {
@@ -37,10 +43,19 @@ const clients = [
   "Lojas Torra",
   "Autódromo Internacional de Campo Grande",
   "Atacadão",
-  "Escolas Harmonia",
+  {
+    name: "Escolas Harmonia",
+    logo: "/lovable-uploads/9a5f2714-7705-46fd-b8c7-dfa6629428ce.png"
+  },
   "Cultivar Agrícola",
-  "Spoleto",
-  "Imbauba",
+  {
+    name: "Spoleto",
+    logo: "/lovable-uploads/c1029273-de7a-43f1-9fcf-9e9dd6536825.png"
+  },
+  {
+    name: "Imbauba",
+    logo: "/lovable-uploads/48bbd644-e886-41ba-9c2f-dd756ad303bc.png"
+  },
   "Alphaville 4",
   "Festival da Carne",
   "Doces Momentos"
