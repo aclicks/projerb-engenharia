@@ -14,7 +14,7 @@ const Contact = () => {
           <div className="bg-white p-6 rounded-lg text-black flex flex-col justify-between h-[200px]">
             <div>
               <h3 className="text-2xl font-citrine font-bold mb-3" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>Contato via whatsapp</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6" style={{ fontVariationSettings: '"wght" 550' }}>
                 Responderemos sua mensagem no tempo mais breve possível.
               </p>
             </div>
@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>ENDEREÇO</h4>
-              <p className="text-white/80">
+              <p className="text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
                 R. José Dibo, 63<br />
                 Jardim dos Estados<br />
                 Campo Grande MS
@@ -42,7 +42,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>HORÁRIO DE ATENDIMENTO</h4>
-              <p className="text-white/80">
+              <p className="text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
                 Segunda à sexta<br />
                 8h às 18h
               </p>
@@ -50,7 +50,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>CONTATO</h4>
-              <div className="space-y-2 text-white/80">
+              <div className="space-y-2 text-white/80" style={{ fontVariationSettings: '"wght" 550' }}>
                 <p>
                   <a 
                     href="mailto:william@projerb.com.br"
@@ -80,7 +80,7 @@ const Contact = () => {
               alt="PROJERB"
               className="h-16"
             />
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600" style={{ fontVariationSettings: '"wght" 550' }}>
               Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | {' '}
               <a 
                 href="mailto:william@projerb.com.br"
