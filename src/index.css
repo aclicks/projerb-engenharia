@@ -1,45 +1,43 @@
 
-@font-face {
-  font-family: 'citrine';
-  src: url('/fonts/citrine.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'citrine';
-  src: url('/fonts/citrine.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'citrine-variable';
+  src: url('/fonts/citrine.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     @apply bg-secondary text-primary antialiased;
-    font-family: "citrine", sans-serif;
+    font-family: "citrine-variable", sans-serif;
+    font-variation-settings: "wght" 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "citrine", sans-serif;
+    font-family: "citrine-variable", sans-serif;
+    font-variation-settings: "wght" 400;
   }
 }
 
-.glass-card {
-  @apply backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg;
-}
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
 
-.section-padding {
-  @apply py-20 px-6 md:px-12 lg:px-24;
-}
-
-.btn-primary {
-  @apply px-8 py-3 bg-blue-primary text-white rounded-lg transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg;
+  .btn-primary {
+    @apply px-8 py-3 bg-blue-primary text-white rounded-lg transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg;
+  }
 }
 
 .fade-up {
