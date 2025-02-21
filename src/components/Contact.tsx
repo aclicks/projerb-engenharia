@@ -1,3 +1,4 @@
+
 import { MessageSquare } from "lucide-react";
 
 const Contact = () => {
@@ -78,13 +79,13 @@ const Contact = () => {
               className="h-8"
             />
             <p className="text-sm text-white/80">
-              Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | 
+              Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | {' '}
               <a 
                 href="mailto:william@projerb.com.br"
                 className="hover:text-white transition-colors"
               >
                 william@projerb.com.br
-              </a> | 
+              </a> | {' '}
               <a 
                 href="tel:+556798409-3752"
                 className="hover:text-white transition-colors"
