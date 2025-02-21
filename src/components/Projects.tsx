@@ -84,6 +84,10 @@ const Projects = () => {
     };
   }, [emblaApi]);
 
+  // Split clients into two rows
+  const firstRow = clients.slice(0, Math.ceil(clients.length / 2));
+  const secondRow = clients.slice(Math.ceil(clients.length / 2));
+
   return (
     <section id="clientes" className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -96,19 +100,36 @@ const Projects = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-4">
-              {clients.map((client, index) => (
-                <div
-                  key={index}
-                  className="flex-none min-w-[280px] mx-4"
-                >
-                  <div className="h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105">
-                    <span className="text-primary font-semibold text-center">
-                      {client}
-                    </span>
-                  </div>
+            <div className="backface-hidden -ml-4">
+              <div className="flex flex-col gap-8">
+                {/* First Row */}
+                <div className="flex pl-4">
+                  {firstRow.map((client, index) => (
+                    <div
+                      key={index}
+                      className="flex-none w-48 h-24 mr-8 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                    >
+                      <span className="text-primary font-semibold text-center">
+                        {client}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                
+                {/* Second Row */}
+                <div className="flex pl-4">
+                  {secondRow.map((client, index) => (
+                    <div
+                      key={index}
+                      className="flex-none w-48 h-24 mr-8 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                    >
+                      <span className="text-primary font-semibold text-center">
+                        {client}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
