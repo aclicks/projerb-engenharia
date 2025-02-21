@@ -30,6 +30,9 @@ export default {
         accent: "#C4B5A4",
         muted: "#E5E7EB",
       },
+      fontFamily: {
+        citrine: ['Citrine', 'sans-serif']
+      },
       keyframes: {
         "fade-up": {
           "0%": {
