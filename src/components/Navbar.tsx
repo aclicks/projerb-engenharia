@@ -12,7 +12,7 @@ const Navbar = () => {
               <img
                 src="/lovable-uploads/9f5e3fc7-fd07-497c-a386-ca1e45568066.png"
                 alt="PROJERB"
-                className="h-8"
+                className="h-24" // Changed from h-8 to h-24 (8 * 3 = 24)
               />
             </Link>
           </div>
