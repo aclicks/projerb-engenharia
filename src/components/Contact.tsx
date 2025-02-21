@@ -3,7 +3,7 @@ import { MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="bg-black text-white">
+    <section className="bg-[#334866] text-white">
       <div className="text-center py-16">
         <h2 className="text-4xl md:text-5xl font-bold">Contato</h2>
       </div>
