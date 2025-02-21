@@ -1,7 +1,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const clients = [
   "Energisa",
@@ -89,7 +89,7 @@ const Projects = () => {
   const secondRow = clients.slice(Math.ceil(clients.length / 2));
 
   return (
-    <section className="section-padding bg-secondary">
+    <section id="clientes" className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Clientes</h2>

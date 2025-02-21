@@ -1,7 +1,7 @@
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center section-padding">
+    <section id="sobre" className="min-h-screen flex items-center justify-center section-padding">
       <div className="max-w-6xl mx-auto text-center">
         <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in">
           Excelência em Engenharia
