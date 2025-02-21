@@ -2,11 +2,11 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    const contactSection = document.getElementById('contato');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -27,37 +27,34 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/sobre"
+            <a
+              href="#sobre"
+              onClick={(e) => scrollToSection(e, 'sobre')}
               className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
             >
               Sobre
-            </Link>
-            <Link
-              to="/clientes"
+            </a>
+            <a
+              href="#clientes"
+              onClick={(e) => scrollToSection(e, 'clientes')}
               className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
             >
               Clientes
-            </Link>
-            <Link
-              to="/servicos"
+            </a>
+            <a
+              href="#servicos"
+              onClick={(e) => scrollToSection(e, 'servicos')}
               className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
             >
               Serviços
-            </Link>
-            <Link
-              to="/noticias"
-              className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
-            >
-              Notícias
-            </Link>
+            </a>
           </div>
 
           {/* Contact Button */}
           <div>
             <a
               href="#contato"
-              onClick={scrollToContact}
+              onClick={(e) => scrollToSection(e, 'contato')}
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
             >
               Contato
