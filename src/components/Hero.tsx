@@ -1,19 +1,7 @@
 
 const Hero = () => {
   return (
-    <section id="sobre" className="min-h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: "url('/lovable-uploads/2c8c2b95-e8d3-4d6d-a92c-594d261acd70.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.3)'
-        }}
-      />
-      
+    <section id="sobre" className="min-h-screen relative overflow-hidden bg-primary">
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center section-padding">
         <div className="max-w-6xl mx-auto text-center">
