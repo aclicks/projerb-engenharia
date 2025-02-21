@@ -29,7 +29,10 @@ const clients = [
   "Rotele",
   "Lojas Americanas",
   "Universidade Anhanguera",
-  "Jooy",
+  {
+    name: "Jooy",
+    logo: "/lovable-uploads/81a6ee5e-de51-4557-8b89-c03c4868fcd7.png"
+  },
   "Fogo Caipira",
   "Rede Pires",
   "Projebio (Jaraguari)",
