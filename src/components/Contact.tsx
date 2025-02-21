@@ -1,42 +1,70 @@
 
 const Contact = () => {
   return (
-    <section className="section-padding bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Entre em Contato</h2>
-          <p className="text-primary/60 max-w-2xl mx-auto">
-            Vamos discutir como podemos ajudar com suas necessidades de engenharia
-          </p>
-        </div>
-        <div className="max-w-xl mx-auto">
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="Nome"
-                className="w-full px-4 py-3 rounded-lg border border-muted focus:outline-none focus:border-accent transition-colors"
-              />
-              <input
-                type="email"
-                placeholder="E-mail"
-                className="w-full px-4 py-3 rounded-lg border border-muted focus:outline-none focus:border-accent transition-colors"
-              />
+    <section className="bg-black text-white">
+      <div className="text-center py-16">
+        <h2 className="text-4xl md:text-5xl font-bold">Contato</h2>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-6 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left Column */}
+          <div className="bg-white p-8 rounded-lg text-black">
+            <h3 className="text-2xl font-bold mb-4">Contato via whatsapp</h3>
+            <p className="text-gray-600 mb-8">
+              Responderemos sua mensagem no tempo mais breve possível.
+            </p>
+            <a 
+              href="https://wa.me/5567984093752"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors"
+            >
+              CLIQUE PARA ENVIAR MENSAGEM
+            </a>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            <div>
+              <h4 className="font-bold text-lg mb-2">ENDEREÇO</h4>
+              <p className="text-white/80">
+                R. José Dibo, 63<br />
+                Jardim dos Estados<br />
+                Campo Grande MS
+              </p>
             </div>
-            <input
-              type="text"
-              placeholder="Assunto"
-              className="w-full px-4 py-3 rounded-lg border border-muted focus:outline-none focus:border-accent transition-colors"
-            />
-            <textarea
-              placeholder="Mensagem"
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-muted focus:outline-none focus:border-accent transition-colors"
-            />
-            <button type="submit" className="btn-primary w-full">
-              Enviar Mensagem
-            </button>
-          </form>
+
+            <div>
+              <h4 className="font-bold text-lg mb-2">HORÁRIO DE ATENDIMENTO</h4>
+              <p className="text-white/80">
+                Segunda à sexta<br />
+                8h às 18h
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-2">CONTACT</h4>
+              <div className="space-y-2 text-white/80">
+                <p>
+                  <a 
+                    href="mailto:william@projerb.com.br"
+                    className="hover:text-white transition-colors"
+                  >
+                    william@projerb.com.br
+                  </a>
+                </p>
+                <p>
+                  <a 
+                    href="tel:+556798409-3752"
+                    className="hover:text-white transition-colors"
+                  >
+                    (67)98409-3752
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
