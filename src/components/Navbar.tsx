@@ -51,15 +51,13 @@ const Navbar = () => {
           </div>
 
           {/* Contact Button */}
-          <div>
-            <a
-              href="#contato"
-              onClick={(e) => scrollToSection(e, 'contato')}
-              className="font-citrine inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors tracking-wider"
-            >
-              Contato
-            </a>
-          </div>
+          <a
+            href="#contato"
+            onClick={(e) => scrollToSection(e, 'contato')}
+            className="font-citrine inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors tracking-wider uppercase"
+          >
+            Contato
+          </a>
         </div>
       </div>
     </nav>
