@@ -43,6 +43,7 @@ const Projects = () => {
     dragFree: true,
     containScroll: "trimSnaps",
     align: 'start',
+    slidesToScroll: 5
   });
 
   const scrollPrev = useCallback(() => {
