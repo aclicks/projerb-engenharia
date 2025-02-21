@@ -54,12 +54,6 @@ const Projects = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Create two rows of clients
-  const rows = [
-    clients.slice(0, Math.ceil(clients.length / 2)),
-    clients.slice(Math.ceil(clients.length / 2))
-  ];
-
   return (
     <section className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -72,25 +66,15 @@ const Projects = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-4">
-              {rows.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex-none min-w-full pl-4">
-                  <div className="flex flex-col gap-8">
-                    {rows.map((row, rowIndex) => (
-                      <div key={rowIndex} className="flex gap-8">
-                        {row.map((client, index) => (
-                          <div
-                            key={index}
-                            className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-                          >
-                            <span className="text-primary font-semibold text-center">
-                              {client}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+            <div className="flex gap-8">
+              {clients.map((client, index) => (
+                <div
+                  key={index}
+                  className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                >
+                  <span className="text-primary font-semibold text-center">
+                    {client}
+                  </span>
                 </div>
               ))}
             </div>
