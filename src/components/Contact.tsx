@@ -1,9 +1,8 @@
-
 import { MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="bg-[#334866] text-white">
+    <section id="contato" className="bg-[#334866] text-white">
       <div className="text-center py-16">
         <h2 className="text-4xl md:text-5xl font-bold">Contato</h2>
       </div>
@@ -67,6 +66,32 @@ const Contact = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6 pb-8">
+        <div className="border-t border-white/20 pt-8 mt-20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <img
+              src="/lovable-uploads/9feaf884-037e-4943-952e-32276112ed2a.png"
+              alt="PROJERB"
+              className="h-8"
+            />
+            <p className="text-sm text-white/80">
+              Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | 
+              <a 
+                href="mailto:william@projerb.com.br"
+                className="hover:text-white transition-colors"
+              >
+                william@projerb.com.br
+              </a> | 
+              <a 
+                href="tel:+556798409-3752"
+                className="hover:text-white transition-colors"
+              >
+                (67)98409-3752
+              </a>
+            </p>
           </div>
         </div>
       </div>

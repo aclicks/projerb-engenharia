@@ -2,6 +2,14 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contato');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +20,7 @@ const Navbar = () => {
               <img
                 src="/lovable-uploads/9f5e3fc7-fd07-497c-a386-ca1e45568066.png"
                 alt="PROJERB"
-                className="h-24" // Changed from h-8 to h-24 (8 * 3 = 24)
+                className="h-24"
               />
             </Link>
           </div>
@@ -47,12 +55,13 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <div>
-            <Link
-              to="/contato"
+            <a
+              href="#contato"
+              onClick={scrollToContact}
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
             >
               Contato
-            </Link>
+            </a>
           </div>
         </div>
       </div>
