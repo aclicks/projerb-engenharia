@@ -11,7 +11,6 @@ const Navbar = () => {
   };
 
   const navLinkStyle = {
-    fontFamily: 'citrine-variable',
     fontVariationSettings: '"wght" 700'
   };
 
@@ -35,7 +34,7 @@ const Navbar = () => {
             <a
               href="#sobre"
               onClick={(e) => scrollToSection(e, 'sobre')}
-              className="text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
               style={navLinkStyle}
             >
               Sobre
@@ -43,7 +42,7 @@ const Navbar = () => {
             <a
               href="#servicos"
               onClick={(e) => scrollToSection(e, 'servicos')}
-              className="text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
               style={navLinkStyle}
             >
               Serviços
@@ -51,7 +50,7 @@ const Navbar = () => {
             <a
               href="#clientes"
               onClick={(e) => scrollToSection(e, 'clientes')}
-              className="text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
               style={navLinkStyle}
             >
               Clientes
@@ -62,7 +61,7 @@ const Navbar = () => {
           <a
             href="#contato"
             onClick={(e) => scrollToSection(e, 'contato')}
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors tracking-wider uppercase"
+            className="font-citrine inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors tracking-wider uppercase"
             style={navLinkStyle}
           >
             Contato
