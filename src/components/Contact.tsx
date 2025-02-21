@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id="contato" className="bg-[#334866] text-white">
       <div className="text-center py-16">
-        <h2 className="text-4xl md:text-5xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 400' }}>Contato</h2>
+        <h2 className="text-4xl md:text-5xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>Contato</h2>
       </div>
       
       <div className="max-w-6xl mx-auto px-6 pb-20">
@@ -32,7 +32,7 @@ const Contact = () => {
           {/* Right Column */}
           <div className="space-y-8">
             <div>
-              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 400' }}>ENDEREÇO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>ENDEREÇO</h4>
               <p className="text-white/80">
                 R. José Dibo, 63<br />
                 Jardim dos Estados<br />
@@ -41,7 +41,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 400' }}>HORÁRIO DE ATENDIMENTO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>HORÁRIO DE ATENDIMENTO</h4>
               <p className="text-white/80">
                 Segunda à sexta<br />
                 8h às 18h
@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 400' }}>CONTATO</h4>
+              <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>CONTATO</h4>
               <div className="space-y-2 text-white/80">
                 <p>
                   <a 
