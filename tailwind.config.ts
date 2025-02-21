@@ -31,7 +31,7 @@ export default {
         muted: "#E5E7EB",
       },
       fontFamily: {
-        citrine: ['Citrine', 'sans-serif']
+        citrine: ['citrine-variable', 'sans-serif']
       },
       keyframes: {
         "fade-up": {
