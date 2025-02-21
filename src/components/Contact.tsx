@@ -76,7 +76,7 @@ const Contact = () => {
             <img
               src="/lovable-uploads/73f93941-e961-4e0b-85e2-3bb5619b8803.png"
               alt="PROJERB"
-              className="h-8"
+              className="h-16"
             />
             <p className="text-sm text-gray-600">
               Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | {' '}
