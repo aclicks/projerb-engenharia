@@ -70,25 +70,25 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-6 pb-8">
-        <div className="border-t border-white/20 pt-8 mt-20">
+      <div className="bg-white py-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <img
-              src="/lovable-uploads/9feaf884-037e-4943-952e-32276112ed2a.png"
+              src="/lovable-uploads/73f93941-e961-4e0b-85e2-3bb5619b8803.png"
               alt="PROJERB"
               className="h-8"
             />
-            <p className="text-sm text-white/80">
+            <p className="text-sm text-gray-600">
               Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | {' '}
               <a 
                 href="mailto:william@projerb.com.br"
-                className="hover:text-white transition-colors"
+                className="hover:text-gray-900 transition-colors"
               >
                 william@projerb.com.br
               </a> | {' '}
               <a 
                 href="tel:+556798409-3752"
-                className="hover:text-white transition-colors"
+                className="hover:text-gray-900 transition-colors"
               >
                 (67)98409-3752
               </a>
