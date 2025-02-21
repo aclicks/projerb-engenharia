@@ -1,3 +1,4 @@
+
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -7,15 +8,30 @@ const clients = [
     name: "Energisa",
     logo: "/lovable-uploads/3aa28eb0-73ee-4349-b079-e0c68c01a3b6.png"
   },
-  "Fort Atacadista",
+  {
+    name: "Fort Atacadista",
+    logo: "/lovable-uploads/5c530835-4b6f-466a-a060-a2555d09b306.png"
+  },
   {
     name: "Comper",
     logo: "/lovable-uploads/3192bc54-8ecb-4885-944e-39ee3cdb2d3f.png"
   },
-  "Hannah Engenharia",
-  "Egelte Engenharia",
-  "Shopping Norte Sul Plaza",
-  "Shopping Bosque dos Ipês",
+  {
+    name: "Hannah Engenharia",
+    logo: "/lovable-uploads/1a572f88-ca00-4afb-a3c3-6e3fb01434a5.png"
+  },
+  {
+    name: "Egelte Engenharia",
+    logo: "/lovable-uploads/b1df1e88-1015-4515-973f-556b33966645.png"
+  },
+  {
+    name: "Shopping Norte Sul Plaza",
+    logo: "/lovable-uploads/dd6a89d1-4f9b-4374-a406-b64184ac48b4.png"
+  },
+  {
+    name: "Shopping Bosque dos Ipês",
+    logo: "/lovable-uploads/5c211bcb-66ad-4b3a-ab1f-305ff672fe8f.png"
+  },
   {
     name: "Casas Bahia",
     logo: "/lovable-uploads/9d6b1d76-b074-4e3a-b048-9ca9084edda6.png"
