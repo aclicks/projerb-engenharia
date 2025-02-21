@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id="contato" className="bg-[#334866] text-white">
       <div className="text-center py-16">
-        <h2 className="text-4xl md:text-5xl font-citrine font-bold">Contato</h2>
+        <h2 className="text-4xl md:text-5xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 400' }}>Contato</h2>
       </div>
       
       <div className="max-w-6xl mx-auto px-6 pb-20">
