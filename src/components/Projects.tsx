@@ -42,7 +42,7 @@ const Projects = () => {
     loop: true,
     dragFree: true,
     align: 'start',
-    containScroll: 'trimSnaps'
+    slidesToScroll: 2
   });
 
   const scrollPrev = useCallback(() => {
@@ -84,9 +84,14 @@ const Projects = () => {
     };
   }, [emblaApi]);
 
-  // Split clients into two rows
-  const firstRow = clients.slice(0, Math.ceil(clients.length / 2));
-  const secondRow = clients.slice(Math.ceil(clients.length / 2));
+  // Create slides with two clients each (one on top of the other)
+  const slides = [];
+  for (let i = 0; i < clients.length; i += 2) {
+    slides.push([
+      clients[i],
+      i + 1 < clients.length ? clients[i + 1] : null
+    ]);
+  }
 
   return (
     <section id="clientes" className="section-padding bg-secondary">
@@ -100,36 +105,23 @@ const Projects = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="backface-hidden -ml-4">
-              <div className="flex flex-col gap-8">
-                {/* First Row */}
-                <div className="flex pl-4">
-                  {firstRow.map((client, index) => (
-                    <div
-                      key={index}
-                      className="flex-none w-48 h-24 mr-8 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-                    >
-                      <span className="text-primary font-semibold text-center">
-                        {client}
-                      </span>
-                    </div>
+            <div className="flex">
+              {slides.map((slide, slideIndex) => (
+                <div key={slideIndex} className="flex-none mx-4 flex flex-col gap-4">
+                  {slide.map((client, index) => (
+                    client && (
+                      <div
+                        key={`${slideIndex}-${index}`}
+                        className="w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                      >
+                        <span className="text-primary font-semibold text-center">
+                          {client}
+                        </span>
+                      </div>
+                    )
                   ))}
                 </div>
-                
-                {/* Second Row */}
-                <div className="flex pl-4">
-                  {secondRow.map((client, index) => (
-                    <div
-                      key={index}
-                      className="flex-none w-48 h-24 mr-8 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-                    >
-                      <span className="text-primary font-semibold text-center">
-                        {client}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
