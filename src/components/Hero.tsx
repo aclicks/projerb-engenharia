@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <section id="sobre" className="min-h-screen flex items-center justify-center section-padding">
       <div className="max-w-6xl mx-auto text-center">
-        <span className="inline-block px-4 py-2 bg-[#1A1F2C] text-white rounded-full text-sm font-medium mb-6 animate-fade-in font-citrine">
+        <span className="inline-block px-4 py-2 bg-[#0060E6] text-white rounded-full text-sm font-bold mb-6 animate-fade-in font-citrine" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>
           REGULARIZAÇÃO E APROVAÇÃO NO CORPO DE BOMBEIROS
         </span>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-up font-citrine">
