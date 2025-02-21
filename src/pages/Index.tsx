@@ -12,8 +12,8 @@ const Index = () => {
       <Navbar />
       <main className="pt-20 overflow-hidden">
         <Hero />
-        <Services />
         <Stats />
+        <Services />
         <Projects />
         <Contact />
       </main>
