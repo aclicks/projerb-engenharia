@@ -35,18 +35,18 @@ const Navbar = () => {
               Sobre
             </a>
             <a
-              href="#clientes"
-              onClick={(e) => scrollToSection(e, 'clientes')}
-              className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
-            >
-              Clientes
-            </a>
-            <a
               href="#servicos"
               onClick={(e) => scrollToSection(e, 'servicos')}
               className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
             >
               Serviços
+            </a>
+            <a
+              href="#clientes"
+              onClick={(e) => scrollToSection(e, 'clientes')}
+              className="text-primary hover:text-accent transition-colors uppercase text-sm font-medium"
+            >
+              Clientes
             </a>
           </div>
 
