@@ -30,21 +30,21 @@ const Navbar = () => {
             <a
               href="#sobre"
               onClick={(e) => scrollToSection(e, 'sobre')}
-              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
             >
               Sobre
             </a>
             <a
               href="#servicos"
               onClick={(e) => scrollToSection(e, 'servicos')}
-              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
             >
               Serviços
             </a>
             <a
               href="#clientes"
               onClick={(e) => scrollToSection(e, 'clientes')}
-              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm"
+              className="font-citrine text-primary hover:text-accent transition-colors uppercase text-sm tracking-wider"
             >
               Clientes
             </a>
@@ -55,7 +55,7 @@ const Navbar = () => {
             <a
               href="#contato"
               onClick={(e) => scrollToSection(e, 'contato')}
-              className="font-citrine inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
+              className="font-citrine inline-flex items-center px-4 py-2 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary/90 transition-colors tracking-wider"
             >
               Contato
             </a>
