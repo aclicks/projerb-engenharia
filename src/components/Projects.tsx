@@ -1,7 +1,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const clients = [
   "Energisa",
@@ -54,6 +54,21 @@ const Projects = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Auto-scroll every 10 seconds
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+
+  // Split clients into two rows
+  const firstRow = clients.slice(0, Math.ceil(clients.length / 2));
+  const secondRow = clients.slice(Math.ceil(clients.length / 2));
+
   return (
     <section className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -66,17 +81,34 @@ const Projects = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-8">
-              {clients.map((client, index) => (
-                <div
-                  key={index}
-                  className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-                >
-                  <span className="text-primary font-semibold text-center">
-                    {client}
-                  </span>
-                </div>
-              ))}
+            <div className="flex flex-col gap-8">
+              {/* First Row */}
+              <div className="flex gap-8 pr-8">
+                {firstRow.map((client, index) => (
+                  <div
+                    key={index}
+                    className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                  >
+                    <span className="text-primary font-semibold text-center">
+                      {client}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Second Row */}
+              <div className="flex gap-8 pr-8">
+                {secondRow.map((client, index) => (
+                  <div
+                    key={index}
+                    className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                  >
+                    <span className="text-primary font-semibold text-center">
+                      {client}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
