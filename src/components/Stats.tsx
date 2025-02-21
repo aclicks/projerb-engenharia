@@ -1,9 +1,9 @@
 
 const stats = [
-  { number: "250+", label: "Projects Completed" },
-  { number: "50+", label: "Expert Engineers" },
-  { number: "15+", label: "Years Experience" },
-  { number: "99%", label: "Client Satisfaction" },
+  { number: "250+", label: "Projetos Concluídos" },
+  { number: "50+", label: "Engenheiros Especialistas" },
+  { number: "15+", label: "Anos de Experiência" },
+  { number: "99%", label: "Satisfação dos Clientes" },
 ];
 
 const Stats = () => {

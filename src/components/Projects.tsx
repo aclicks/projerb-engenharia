@@ -1,18 +1,18 @@
 
 const projects = [
   {
-    title: "Industrial Automation",
-    description: "Smart factory optimization system",
+    title: "Automação Industrial",
+    description: "Sistema de otimização para fábricas inteligentes",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Infrastructure Development",
-    description: "Smart city infrastructure project",
+    title: "Desenvolvimento de Infraestrutura",
+    description: "Projeto de infraestrutura para cidades inteligentes",
     image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Software Integration",
-    description: "Enterprise software solutions",
+    title: "Integração de Software",
+    description: "Soluções de software empresarial",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
 ];
@@ -22,9 +22,9 @@ const Projects = () => {
     <section className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projetos em Destaque</h2>
           <p className="text-primary/60 max-w-2xl mx-auto">
-            Explore our latest engineering achievements
+            Conheça nossas últimas conquistas em engenharia
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
