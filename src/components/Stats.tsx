@@ -16,14 +16,18 @@ const Stats = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div 
-                className="text-4xl md:text-5xl font-bold mb-2 text-accent font-citrine"
+                className="text-4xl md:text-5xl font-bold mb-2 text-accent"
                 style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
               >
                 {stat.number}
               </div>
               <div 
-                className="text-white/80 font-citrine"
-                style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
+                className="text-xl text-white/80"
+                style={{ 
+                  fontFamily: "citrine-variable", 
+                  fontVariationSettings: '"wght" 700',
+                  letterSpacing: '0.02em'
+                }}
               >
                 {stat.label}
               </div>
