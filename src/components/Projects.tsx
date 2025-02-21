@@ -1,3 +1,4 @@
+
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -49,11 +50,11 @@ const clients = [
   "Cultivar Agrícola",
   {
     name: "Spoleto",
-    logo: "/lovable-uploads/01e27ed9-ca4e-4e03-b2c8-22c1db8127a7.png"
+    logo: "/lovable-uploads/c1029273-de7a-43f1-9fcf-9e9dd6536825.png"
   },
   {
     name: "Imbauba",
-    logo: "/lovable-uploads/20ca569f-d635-46be-9cce-1f3eee30fcb7.png"
+    logo: "/lovable-uploads/48bbd644-e886-41ba-9c2f-dd756ad303bc.png"
   },
   "Alphaville 4",
   "Festival da Carne",
@@ -123,7 +124,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="w-32 h-16 object-contain"
+        className="h-12 object-contain"
       />
     );
   };
