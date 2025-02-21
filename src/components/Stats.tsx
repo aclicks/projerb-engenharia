@@ -13,7 +13,7 @@ const Stats = () => {
             <div
               key={index}
               className="text-center font-citrine"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.1}s`, fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
             >
               <div className="text-4xl md:text-5xl font-bold mb-2 text-accent">
                 {stat.number}
