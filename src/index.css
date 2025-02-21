@@ -16,7 +16,7 @@
 @layer base {
   body {
     @apply bg-secondary text-primary antialiased;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Citrine', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
