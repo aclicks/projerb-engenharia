@@ -49,7 +49,7 @@ const Services = () => {
               <div className="flex items-start gap-4">
                 <div className="mt-1">{service.icon}</div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                  <h3 className="text-xl font-citrine font-bold mb-4" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>{service.title}</h3>
                   <p className="text-primary/60">{service.description}</p>
                 </div>
               </div>
