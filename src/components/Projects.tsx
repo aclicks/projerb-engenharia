@@ -1,4 +1,3 @@
-
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -17,7 +16,10 @@ const clients = [
   "Egelte Engenharia",
   "Shopping Norte Sul Plaza",
   "Shopping Bosque dos Ipês",
-  "Casas Bahia",
+  {
+    name: "Casas Bahia",
+    logo: "/lovable-uploads/9d6b1d76-b074-4e3a-b048-9ca9084edda6.png"
+  },
   "Usina Laguna (Batayporã)",
   "Autobel",
   {
