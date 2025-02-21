@@ -39,10 +39,10 @@ const clients = [
 
 const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    slidesToScroll: 1,
-    align: 'start',
     loop: true,
     dragFree: true,
+    containScroll: "trimSnaps",
+    align: 'start',
   });
 
   const scrollPrev = useCallback(() => {
@@ -71,25 +71,27 @@ const Projects = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              <div className="flex-none w-full">
-                <div className="space-y-8">
-                  {rows.map((row, rowIndex) => (
-                    <div key={rowIndex} className="flex gap-8 items-center">
-                      {row.map((client, index) => (
-                        <div
-                          key={index}
-                          className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-                        >
-                          <span className="text-primary font-semibold text-center">
-                            {client}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+            <div className="flex -ml-4">
+              {rows.map((row, rowIndex) => (
+                <div key={rowIndex} className="flex-none min-w-full pl-4">
+                  <div className="flex flex-col gap-8">
+                    {rows.map((row, rowIndex) => (
+                      <div key={rowIndex} className="flex gap-8">
+                        {row.map((client, index) => (
+                          <div
+                            key={index}
+                            className="flex-none w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                          >
+                            <span className="text-primary font-semibold text-center">
+                              {client}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
