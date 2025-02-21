@@ -12,13 +12,19 @@ const Stats = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center font-citrine"
-              style={{ animationDelay: `${index * 0.1}s`, fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
+              className="text-center"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-accent">
+              <div 
+                className="text-4xl md:text-5xl font-bold mb-2 text-accent font-citrine"
+                style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
+              >
                 {stat.number}
               </div>
-              <div className="text-white/80" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>
+              <div 
+                className="text-white/80 font-citrine"
+                style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}
+              >
                 {stat.label}
               </div>
             </div>
