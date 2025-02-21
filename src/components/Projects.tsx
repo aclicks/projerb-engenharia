@@ -4,7 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
 
 const clients = [
-  "Energisa",
+  {
+    name: "Energisa",
+    logo: "/lovable-uploads/3aa28eb0-73ee-4349-b079-e0c68c01a3b6.png"
+  },
   "Fort Atacadista",
   "Comper",
   "Hannah Engenharia",
@@ -93,6 +96,23 @@ const Projects = () => {
     ]);
   }
 
+  const renderClient = (client: string | { name: string; logo: string }) => {
+    if (typeof client === 'string') {
+      return (
+        <span className="text-primary font-semibold text-center">
+          {client}
+        </span>
+      );
+    }
+    return (
+      <img 
+        src={client.logo} 
+        alt={client.name} 
+        className="h-12 object-contain"
+      />
+    );
+  };
+
   return (
     <section id="clientes" className="section-padding bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -114,9 +134,7 @@ const Projects = () => {
                         key={`${slideIndex}-${index}`}
                         className="w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
                       >
-                        <span className="text-primary font-semibold text-center">
-                          {client}
-                        </span>
+                        {renderClient(client)}
                       </div>
                     )
                   ))}
