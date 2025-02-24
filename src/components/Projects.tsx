@@ -1,4 +1,3 @@
-
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -26,7 +25,7 @@ const clients = [
   },
   {
     name: "Shopping Norte Sul Plaza",
-    logo: "/lovable-uploads/dd6a89d1-4f9b-4374-a406-b64184ac48b4.png"
+    logo: "/lovable-uploads/7a594fa9-db9a-4a35-bc1b-e152c422d3b6.png"
   },
   {
     name: "Shopping Bosque dos Ipês",
