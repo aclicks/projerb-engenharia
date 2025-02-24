@@ -126,6 +126,10 @@ const clients = [
   {
     name: "Doces Momentos",
     logo: "/lovable-uploads/2c9e0492-2424-4f58-bc8d-6fc5ad17b7d3.png"
+  },
+  {
+    name: "Postos Mirian",
+    logo: "/lovable-uploads/c5d450b6-82ce-45a8-9255-555dbc6ebc90.png"
   }
 ];
 
