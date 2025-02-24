@@ -136,7 +136,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="h-14 object-contain" // Increased from h-12 to h-14 (approximately 20% bigger)
+        className="h-12 object-contain"
       />
     );
   };
@@ -160,7 +160,7 @@ const Projects = () => {
                     client && (
                       <div
                         key={`${slideIndex}-${index}`}
-                        className="w-56 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105" // Increased from w-48 h-24 to w-56 h-28 (approximately 20% bigger)
+                        className="w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
                       >
                         {renderClient(client)}
                       </div>
