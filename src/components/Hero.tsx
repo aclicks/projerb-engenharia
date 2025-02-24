@@ -5,7 +5,7 @@ const Hero = () => {
       id="sobre" 
       className="min-h-screen relative bg-cover bg-center bg-no-repeat section-padding"
       style={{
-        backgroundImage: `url('/lovable-uploads/d0d6b0b9-c3b9-49eb-9f41-667ba912f083.png')`
+        backgroundImage: `url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7')`
       }}
     >
       {/* Overlay */}
