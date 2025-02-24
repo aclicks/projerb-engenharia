@@ -1,4 +1,3 @@
-
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -10,7 +9,7 @@ const clients = [
   },
   {
     name: "Fort Atacadista",
-    logo: "/lovable-uploads/5c530835-4b6f-466a-a060-a2555d09b306.png"
+    logo: "/lovable-uploads/5c530835-4b6f-466a-a060-a2555d09b306.png" // Maintaining the same image as it's a good quality logo
   },
   {
     name: "Comper",
