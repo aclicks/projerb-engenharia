@@ -48,14 +48,26 @@ const clients = [
     name: "Eletrosul",
     logo: "/lovable-uploads/731f990a-306b-464a-a20f-bd298c7c11d0.png"
   },
-  "Rotele",
-  "Lojas Americanas",
-  "Universidade Anhanguera",
+  {
+    name: "Rotele",
+    logo: "/lovable-uploads/b38b1e26-2680-4663-a184-ec25a32d0986.png"
+  },
+  {
+    name: "Lojas Americanas",
+    logo: "/lovable-uploads/7ce3289b-ecfe-4d7a-8297-e96a3fb54415.png"
+  },
+  {
+    name: "Universidade Anhanguera",
+    logo: "/lovable-uploads/414ee17b-3d6c-43d4-8a1d-baf2e11ae37b.png"
+  },
   {
     name: "Jooy",
-    logo: "/lovable-uploads/81a6ee5e-de51-4557-8b89-c03c4868fcd7.png"
+    logo: "/lovable-uploads/4de488d0-8d47-4b4e-a9b5-d19c2d2dcbd3.png"
   },
-  "Fogo Caipira",
+  {
+    name: "Fogo Caipira",
+    logo: "/lovable-uploads/e19fae46-22f0-4588-84d2-be9af57c355a.png"
+  },
   "Rede Pires",
   "Projebio (Jaraguari)",
   "Tecar Automóveis",
