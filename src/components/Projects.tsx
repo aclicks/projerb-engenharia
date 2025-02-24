@@ -1,3 +1,4 @@
+
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect } from 'react';
@@ -9,7 +10,7 @@ const clients = [
   },
   {
     name: "Fort Atacadista",
-    logo: "/lovable-uploads/5c530835-4b6f-466a-a060-a2555d09b306.png" // Maintaining the same image as it's a good quality logo
+    logo: "/lovable-uploads/cfafd55c-8bd8-4481-875c-2f9edd7425f5.png"
   },
   {
     name: "Comper",
@@ -21,7 +22,7 @@ const clients = [
   },
   {
     name: "Egelte Engenharia",
-    logo: "/lovable-uploads/b1df1e88-1015-4515-973f-556b33966645.png"
+    logo: "/lovable-uploads/afeb8708-ef4e-44db-bfc9-2da2cf7c8657.png"
   },
   {
     name: "Shopping Norte Sul Plaza",
@@ -29,14 +30,20 @@ const clients = [
   },
   {
     name: "Shopping Bosque dos Ipês",
-    logo: "/lovable-uploads/5c211bcb-66ad-4b3a-ab1f-305ff672fe8f.png"
+    logo: "/lovable-uploads/9ddfb5b2-30ae-40b4-a152-ef99e75a1add.png"
   },
   {
     name: "Casas Bahia",
     logo: "/lovable-uploads/9d6b1d76-b074-4e3a-b048-9ca9084edda6.png"
   },
-  "Usina Laguna (Batayporã)",
-  "Autobel",
+  {
+    name: "Usina Laguna",
+    logo: "/lovable-uploads/140781ff-3bb3-4260-9745-df45510ffd41.png"
+  },
+  {
+    name: "Autobel",
+    logo: "/lovable-uploads/3b4c6a26-5976-4c95-a878-b8b3e17d6fe2.png"
+  },
   {
     name: "Eletrosul",
     logo: "/lovable-uploads/731f990a-306b-464a-a20f-bd298c7c11d0.png"
