@@ -136,7 +136,7 @@ const Projects = () => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="h-12 object-contain"
+        className="w-full h-full object-contain" // Updated to fill the container while maintaining aspect ratio
       />
     );
   };
