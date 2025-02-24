@@ -4,12 +4,14 @@ const Hero = () => {
     <section id="sobre" className="min-h-screen flex items-center justify-center section-padding relative">
       {/* Background image with overlay */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 w-full h-full"
         style={{
-          backgroundImage: "url('/lovable-uploads/c2120dd1-84fa-4319-8314-92520dc67b92.png')",
+          backgroundImage: `url('/lovable-uploads/d0d6b0b9-c3b9-49eb-9f41-667ba912f083.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: '100%'
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
