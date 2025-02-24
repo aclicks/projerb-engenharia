@@ -68,21 +68,66 @@ const clients = [
     name: "Fogo Caipira",
     logo: "/lovable-uploads/e19fae46-22f0-4588-84d2-be9af57c355a.png"
   },
-  "Rede Pires",
-  "Projebio (Jaraguari)",
-  "Tecar Automóveis",
-  "Condomínio Riviera Dourados",
-  "JAT Transportadora",
-  "Lojas Torra",
-  "Autódromo Internacional de Campo Grande",
-  "Atacadão",
-  "Escolas Harmonia",
-  "Cultivar Agrícola",
-  "Spoleto",
-  "Imbauba",
-  "Alphaville 4",
-  "Festival da Carne",
-  "Doces Momentos"
+  {
+    name: "Rede Pires",
+    logo: "/lovable-uploads/47053daf-5326-4e42-931c-d6ea3690976e.png"
+  },
+  {
+    name: "Projebio",
+    logo: "/lovable-uploads/da45265b-a7c6-43b6-baa4-8e9cb824b473.png"
+  },
+  {
+    name: "Tecar Automóveis",
+    logo: "/lovable-uploads/b7dac9c9-cc01-45dc-b5a9-b99537282d5e.png"
+  },
+  {
+    name: "Condomínio Riviera Dourados",
+    logo: "/lovable-uploads/95ffd0af-d4e1-455b-a31b-8a698f19c24d.png"
+  },
+  {
+    name: "JAT Transportadora",
+    logo: "/lovable-uploads/1de16650-5459-4f12-bbfb-2446b9eab39b.png"
+  },
+  {
+    name: "Lojas Torra",
+    logo: "/lovable-uploads/7798f774-2afc-487e-a4dc-5da414d14935.png"
+  },
+  {
+    name: "Autódromo Internacional de Campo Grande",
+    logo: "/lovable-uploads/11aba6e0-502b-41e9-b2e4-c61db446fbb7.png"
+  },
+  {
+    name: "Atacadão",
+    logo: "/lovable-uploads/b72d708e-05bd-436a-9ab1-11db9f508573.png"
+  },
+  {
+    name: "Escolas Harmonia",
+    logo: "/lovable-uploads/a69cc83b-5df3-47f0-9442-2066162c4a40.png"
+  },
+  {
+    name: "Cultivar Agrícola",
+    logo: "/lovable-uploads/abc83a41-6bb3-4682-89ae-4d7dbe3e6326.png"
+  },
+  {
+    name: "Spoleto",
+    logo: "/lovable-uploads/1b807556-8fe2-4516-9ca3-15b694f168c5.png"
+  },
+  {
+    name: "Imbauba",
+    logo: "/lovable-uploads/fec7a67f-eb29-4338-a0b0-5b6c83c50126.png"
+  },
+  {
+    name: "Alphaville 4",
+    logo: "/lovable-uploads/13abba6c-9a0f-4e71-bc8c-72dddc7040f9.png"
+  },
+  {
+    name: "Festival da Carne",
+    logo: "/lovable-uploads/84fbd242-8aa8-4e8a-bbd7-beb33b0cd19e.png"
+  },
+  {
+    name: "Doces Momentos",
+    logo: "/lovable-uploads/2c9e0492-2424-4f58-bc8d-6fc5ad17b7d3.png"
+  }
 ];
 
 const Projects = () => {
