@@ -1,93 +1,59 @@
 
-import { cn } from "@/lib/utils";
-import {
-  Icon24Hours,
-  IconClipboardList,
-  IconFileCheck,
-  IconShieldLock,
-  IconTools
-} from "@tabler/icons-react";
+import { Cog, Network, Settings } from "lucide-react";
 
 const services = [
   {
+    icon: <Cog className="w-8 h-8 text-accent" />,
     title: "Elaboração e aprovação de Projetos de Prevenção Contra Incêndio",
     description: "Desenvolvimento e aprovação de projetos completos de prevenção contra incêndio.",
-    icon: <IconShieldLock className="w-8 h-8" />,
   },
   {
+    icon: <Settings className="w-8 h-8 text-accent" />,
     title: "Regularização de edificações no Corpo de Bombeiros",
     description: "Processo completo de regularização de edifícios junto ao Corpo de Bombeiros.",
-    icon: <IconFileCheck className="w-8 h-8" />,
   },
   {
+    icon: <Network className="w-8 h-8 text-accent" />,
     title: "Emissão de Certificado de Vistoria do Corpo de Bombeiros (AVCB)",
     description: "Auxílio na obtenção do AVCB para seu estabelecimento.",
-    icon: <IconClipboardList className="w-8 h-8" />,
   },
   {
+    icon: <Settings className="w-8 h-8 text-accent" />,
     title: "Elaboração de Projetos Complementares de Engenharia",
     description: "Projetos de Instalações Elétricas de Baixa e Média Tensão, Projetos Hidrossanitários, Projetos Estruturais, Projetos de Ar Condicionado e Licenciamento Ambiental.",
-    icon: <IconTools className="w-8 h-8" />,
   },
   {
+    icon: <Cog className="w-8 h-8 text-accent" />,
     title: "Documentação complementar para certificado do Corpo de Bombeiro",
     description: "ART de Conformidade Elétrica, ART de Manutenção de Preventivos de Incêndio, Atualização ou Substituição de Projetos Aprovados (PSCIP), Treinamento de Brigada de Incêndio, e Assessoria Total para certificação no Corpo de Bombeiros.",
-    icon: <Icon24Hours className="w-8 h-8" />,
-  }
+  },
 ];
-
-const Feature = ({
-  title,
-  description,
-  icon,
-  index,
-}: {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  index: number;
-}) => {
-  return (
-    <div
-      className={cn(
-        "flex flex-col border-t border-x py-10 relative group/feature dark:border-neutral-800",
-        index === services.length - 1 && "border-b"
-      )}
-    >
-      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-r from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-      <div className="mb-4 relative z-10 px-10 text-accent">
-        {icon}
-      </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-[#0060E6] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-primary font-citrine" style={{ fontVariationSettings: '"wght" 700' }}>
-          {title}
-        </span>
-      </div>
-      <p className="text-sm text-primary/60 max-w-xs relative z-10 px-10" style={{ fontVariationSettings: '"wght" 550' }}>
-        {description}
-      </p>
-    </div>
-  );
-};
 
 const Services = () => {
   return (
     <section id="servicos" className="section-padding bg-white">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>Serviços</h2>
           <p className="text-primary/60 max-w-2xl mx-auto" style={{ fontVariationSettings: '"wght" 550' }}>
             Soluções especializadas em segurança contra incêndio e engenharia
           </p>
         </div>
-        <div className="flex flex-col">
+        <div className="grid grid-cols-1 gap-8">
           {services.map((service, index) => (
-            <Feature
-              key={service.title}
-              {...service}
-              index={index}
-            />
+            <div
+              key={index}
+              className="glass-card p-8 rounded-2xl hover:transform hover:scale-[1.02] transition-all duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="mt-1">{service.icon}</div>
+                <div>
+                  <h3 className="text-xl font-citrine font-bold mb-4" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>{service.title}</h3>
+                  <p className="text-primary/60" style={{ fontVariationSettings: '"wght" 550' }}>{service.description}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
