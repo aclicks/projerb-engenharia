@@ -76,7 +76,7 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <img
-              src="/lovable-uploads/73f93941-e961-4e0b-85e2-3bb5619b8803.png"
+              src="./lovable-uploads/73f93941-e961-4e0b-85e2-3bb5619b8803.png"
               alt="PROJERB"
               className="h-16"
             />

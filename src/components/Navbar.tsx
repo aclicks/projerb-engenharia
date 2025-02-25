@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img
-                src="/lovable-uploads/9f5e3fc7-fd07-497c-a386-ca1e45568066.png"
+                src="./lovable-uploads/9f5e3fc7-fd07-497c-a386-ca1e45568066.png"
                 alt="PROJERB"
                 className="h-24"
               />
