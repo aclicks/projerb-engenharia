@@ -83,7 +83,7 @@ const Services = () => {
         </div>
         <div className="flex overflow-x-auto hide-scrollbar">
           {services.map((service, index) => (
-            <div key={service.title} className="min-w-[300px] md:min-w-[400px]">
+            <div key={service.title} className="min-w-[280px] md:min-w-[320px] lg:min-w-[350px] flex-shrink-0">
               <Feature
                 {...service}
                 index={index}
