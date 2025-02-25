@@ -1,3 +1,4 @@
+
 import { Network } from "lucide-react";
 
 const services = [
@@ -56,8 +57,8 @@ const services = [
   },
   {
     icon: <Network className="w-8 h-8 text-accent" />,
-    title: "Documentação complementar para certificado do Corpo de Bombeiro",
-    description: "ART de Conformidade Elétrica, ART de Manutenção de Preventivos de Incêndio, Atualização ou Substituição de Projetos Aprovados (PSCIP), Treinamento de Brigada de Incêndio, e Assessoria Total para certificação no Corpo de Bombeiros.",
+    title: "Documentação complementar para certificado do Corpo de Bombeiros",
+    description: "ART de Conformidade Elétrica, ART de Manutenção de Preventivos de Incêndio, Atualização ou Substituição de Projetos Aprovados (PSCIP), Treinamento de Brigada de Incêndio e Assessoria Total para certificação no Corpo de Bombeiros.",
   },
 ];
 
