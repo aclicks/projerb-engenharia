@@ -27,7 +27,7 @@ const Hero = () => {
               <span className="text-[#0060E6]">proteja.</span>
             </h1>
             <p className="text-lg md:text-xl text-white mb-8 max-w-4xl mx-auto animate-fade-up font-citrine" style={{ fontVariationSettings: '"wght" 550', animationDelay: "0.2s" }}>
-              A Projerb Engenharia é uma empresa de Projetos de Engenharia que atua no segmento de projetos de prevenção contra incêndio e projetos complementares de engenharia, assim como na gestão de projetos de engenharia, envolvendo o planejamento, elaboração e compatibilização de projetos, proporcionando uma entrega de pacote de projetos ao cliente com redução de conflitos entre eles e melhor otimização para execução da obra.
+              A Projerb Engenharia é uma empresa especializada em projetos de prevenção contra incêndio e projetos complementares. Além disso, oferece gestão de projetos, abrangendo planejamento, elaboração e compatibilização, para entregar aos clientes um pacote otimizado, com menos conflitos e melhor execução da obra.
             </p>
           </div>
         </div>
