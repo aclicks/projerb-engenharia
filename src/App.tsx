@@ -20,11 +20,6 @@ const App = () => {
           <HashRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/sobre" element={<NotFound />} />
-              <Route path="/clientes" element={<NotFound />} />
-              <Route path="/servicos" element={<NotFound />} />
-              <Route path="/noticias" element={<NotFound />} />
-              <Route path="/contato" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HashRouter>
