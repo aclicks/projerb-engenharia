@@ -3,13 +3,10 @@ const Hero = () => {
   return (
     <section 
       id="sobre" 
-      className="min-h-screen relative bg-cover bg-center bg-no-repeat section-padding"
-      style={{
-        backgroundImage: "url('/lovable-uploads/21cde237-d93b-4f3f-9a46-459cdefe2b23.png')"
-      }}
+      className="min-h-screen relative bg-[#0A0A0A] section-padding"
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <div className="absolute inset-0 z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
