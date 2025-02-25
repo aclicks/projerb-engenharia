@@ -50,11 +50,11 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col border-r py-10 relative group/feature dark:border-neutral-800",
-        index === 0 && "border-l dark:border-neutral-800"
+        "flex flex-col border-t border-x py-10 relative group/feature dark:border-neutral-800",
+        index === services.length - 1 && "border-b"
       )}
     >
-      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-r from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
       <div className="mb-4 relative z-10 px-10 text-accent">
         {icon}
       </div>
@@ -74,21 +74,20 @@ const Feature = ({
 const Services = () => {
   return (
     <section id="servicos" className="section-padding bg-white">
-      <div className="max-w-[95vw] mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-citrine font-bold" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>Serviços</h2>
           <p className="text-primary/60 max-w-2xl mx-auto" style={{ fontVariationSettings: '"wght" 550' }}>
             Soluções especializadas em segurança contra incêndio e engenharia
           </p>
         </div>
-        <div className="flex overflow-x-auto hide-scrollbar">
+        <div className="flex flex-col">
           {services.map((service, index) => (
-            <div key={service.title} className="min-w-[280px] md:min-w-[320px] lg:min-w-[350px] flex-shrink-0">
-              <Feature
-                {...service}
-                index={index}
-              />
-            </div>
+            <Feature
+              key={service.title}
+              {...service}
+              index={index}
+            />
           ))}
         </div>
       </div>
