@@ -1,5 +1,5 @@
 
-import { Cog, Network } from "lucide-react";
+import { Network } from "lucide-react";
 
 const services = [
   {
@@ -15,7 +15,17 @@ const services = [
     description: "Desenvolvimento e aprovação de projetos completos de prevenção contra incêndio.",
   },
   {
-    icon: <Cog className="w-8 h-8 text-accent" />,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-accent">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M8 11a4 4 0 1 1 8 0v5h-8z" />
+        <path d="M8 16v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-3" />
+        <path d="M9 4h6" />
+        <path d="M12 7v-3" />
+        <path d="M8 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+        <circle cx="12" cy="4" r=".5" fill="currentColor" />
+      </svg>
+    ),
     title: "Regularização de edificações no Corpo de Bombeiros",
     description: "Processo completo de regularização de edifícios junto ao Corpo de Bombeiros.",
   },
@@ -35,7 +45,14 @@ const services = [
     description: "Auxílio na obtenção do AVCB para seu estabelecimento.",
   },
   {
-    icon: <Cog className="w-8 h-8 text-accent" />,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-accent">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M8 6h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-12" />
+        <path d="M6 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M8 18v-12a2 2 0 1 0 -4 0v12" />
+      </svg>
+    ),
     title: "Elaboração de Projetos Complementares de Engenharia",
     description: "Projetos de Instalações Elétricas de Baixa e Média Tensão, Projetos Hidrossanitários, Projetos Estruturais, Projetos de Ar Condicionado e Licenciamento Ambiental.",
   },
