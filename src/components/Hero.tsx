@@ -3,10 +3,10 @@ import { AuroraBackground } from "./ui/aurora-background";
 
 const Hero = () => {
   return (
-    <section id="sobre">
+    <section id="sobre" className="w-full">
       <AuroraBackground>
         <div 
-          className="relative z-10 flex flex-col items-center justify-center min-h-screen section-padding"
+          className="relative z-10 flex flex-col items-center justify-center min-h-screen w-full"
           style={{
             backgroundImage: 'url("/lovable-uploads/835d269c-6903-406b-9072-0790ea61e9ab.png")',
             backgroundSize: 'cover',
@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Dark overlay - increased from 50% to 65% opacity */}
           <div className="absolute inset-0 bg-black/65 z-0"></div>
           
-          <div className="relative z-20 max-w-3xl mx-auto text-center">
+          <div className="relative z-20 max-w-3xl mx-auto text-center px-4">
             <span className="inline-block px-4 py-2 bg-[#0060E6] text-white rounded-full text-base font-bold mb-6 animate-fade-in font-citrine" style={{ fontVariationSettings: '"wght" 700' }}>
               REGULARIZAÇÃO E APROVAÇÃO NO CORPO DE BOMBEIROS
             </span>
