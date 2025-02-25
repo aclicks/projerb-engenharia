@@ -1,4 +1,3 @@
-
 import { Network } from "lucide-react";
 
 const services = [
@@ -18,12 +17,11 @@ const services = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-accent">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M8 11a4 4 0 1 1 8 0v5h-8z" />
-        <path d="M8 16v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-3" />
-        <path d="M9 4h6" />
+        <path d="M12 7a4 4 0 0 1 4 4v9a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-9a4 4 0 0 1 4 -4z" />
+        <path d="M9 16h6" />
         <path d="M12 7v-3" />
-        <path d="M8 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-        <circle cx="12" cy="4" r=".5" fill="currentColor" />
+        <path d="M16 5l-4 -1l4 -1" />
+        <path d="M12 4h-3a3 3 0 0 0 -3 3" />
       </svg>
     ),
     title: "Regularização de edificações no Corpo de Bombeiros",
