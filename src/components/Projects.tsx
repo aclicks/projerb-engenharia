@@ -1,7 +1,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const clients = [
   {
@@ -135,11 +135,28 @@ const clients = [
 ];
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
+  // Configure carousel options based on device type
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
     align: 'start',
-    slidesToScroll: 2
+    slidesToScroll: isMobile ? 1 : 2
   });
 
   const scrollPrev = useCallback(() => {
@@ -177,27 +194,32 @@ const Projects = () => {
     };
   }, [emblaApi]);
 
-  const slides = [];
-  for (let i = 0; i < clients.length; i += 2) {
-    slides.push([
-      clients[i],
-      i + 1 < clients.length ? clients[i + 1] : null
-    ]);
-  }
-
-  const renderClient = (client: string | { name: string; logo: string }) => {
-    if (typeof client === 'string') {
-      return (
-        <span className="text-primary font-semibold text-center">
-          {client}
-        </span>
-      );
+  // Prepare slides - for mobile show 1 per slide, for desktop show 2 per slide
+  const prepareSlides = () => {
+    if (isMobile) {
+      return clients.map(client => [client]);
+    } else {
+      const slides = [];
+      for (let i = 0; i < clients.length; i += 2) {
+        slides.push([
+          clients[i],
+          i + 1 < clients.length ? clients[i + 1] : null
+        ]);
+      }
+      return slides;
     }
+  };
+
+  const slides = prepareSlides();
+
+  const renderClient = (client: { name: string; logo: string } | null) => {
+    if (!client) return null;
+    
     return (
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="w-full h-full object-contain" // Updated to fill the container while maintaining aspect ratio
+        className="w-full h-full object-contain"
       />
     );
   };
@@ -212,16 +234,21 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative px-8 md:px-16">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {slides.map((slide, slideIndex) => (
-                <div key={slideIndex} className="flex-none mx-4 flex flex-col gap-4">
+                <div 
+                  key={slideIndex} 
+                  className={`flex-none mx-2 md:mx-4 flex ${isMobile ? 'w-64' : ''} flex-col gap-4`}
+                  style={{ flex: isMobile ? '0 0 auto' : '' }}
+                >
                   {slide.map((client, index) => (
                     client && (
                       <div
                         key={`${slideIndex}-${index}`}
-                        className="w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                        className="h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+                        style={{ width: isMobile ? '100%' : '12rem' }}
                       >
                         {renderClient(client)}
                       </div>
@@ -234,7 +261,7 @@ const Projects = () => {
 
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors z-10"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6 text-primary" />
@@ -242,7 +269,7 @@ const Projects = () => {
 
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors z-10"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6 text-primary" />
