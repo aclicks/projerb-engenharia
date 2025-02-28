@@ -5,6 +5,7 @@ import Stats from "../components/Stats";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 };
