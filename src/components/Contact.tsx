@@ -72,32 +72,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white py-8">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <img
-              src="./lovable-uploads/73f93941-e961-4e0b-85e2-3bb5619b8803.png"
-              alt="PROJERB"
-              className="h-16"
-            />
-            <p className="text-sm text-gray-600" style={{ fontVariationSettings: '"wght" 550' }}>
-              Projerb Engenharia - R. José Dibo, 63 - Jardim dos Estados - Campo Grande - MS | {' '}
-              <a 
-                href="mailto:william@projerb.com.br"
-                className="hover:text-gray-900 transition-colors"
-              >
-                william@projerb.com.br
-              </a> | {' '}
-              <a 
-                href="tel:+556798409-3752"
-                className="hover:text-gray-900 transition-colors"
-              >
-                (67)98409-3752
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
