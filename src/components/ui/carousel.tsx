@@ -67,10 +67,7 @@ const Carousel = React.forwardRef<
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
-        return
-      }
-
+      if (!api) return
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
     }, [])
@@ -105,9 +102,7 @@ const Carousel = React.forwardRef<
     }, [api, setApi])
 
     React.useEffect(() => {
-      if (!api) {
-        return
-      }
+      if (!api) return
 
       onSelect(api)
       api.on("reInit", onSelect)
@@ -115,6 +110,7 @@ const Carousel = React.forwardRef<
 
       return () => {
         api?.off("select", onSelect)
+        api?.off("reInit", onSelect)
       }
     }, [api, onSelect])
 
@@ -134,6 +130,7 @@ const Carousel = React.forwardRef<
       >
         <div
           ref={ref}
+          // Enable pointer events on the root so child buttons receive proper pointer lifecycle
           onKeyDownCapture={handleKeyDown}
           className={cn("relative", className)}
           role="region"
@@ -192,11 +189,122 @@ const CarouselItem = React.forwardRef<
 })
 CarouselItem.displayName = "CarouselItem"
 
+function useHoldToScroll(direction: "prev" | "next") {
+  const { api } = useCarousel()
+  const rafIdRef = React.useRef<number | null>(null)
+  const pressedRef = React.useRef(false)
+
+  // Smooth velocity in pixels/second. Converted to progress using scrollSnapList geometry.
+  const pxPerSec = 400
+
+  const frame = React.useCallback(() => {
+    const embla = api
+    if (!embla || !pressedRef.current) return
+
+    const dir = direction === "next" ? 1 : -1
+
+    // Derive total scrollable distance in pixels from snap points. For loop:false,
+    // last snap is a good approximation of max scroll offset.
+    const snaps = embla.scrollSnapList()
+    const maxPx = snaps.length > 0 ? snaps[snaps.length - 1] : 0
+
+    const now = performance.now()
+    ;(frame as any).prev = (frame as any).prev ?? now
+    const dtMs = now - (frame as any).prev
+    ;(frame as any).prev = now
+
+    let current = embla.scrollProgress()
+    if (maxPx > 0) {
+      const deltaPx = dir * pxPerSec * (dtMs / 1000)
+      const deltaProgress = deltaPx / maxPx
+      current = current + deltaProgress
+    } else {
+      current = current + dir * 0.002 // fallback
+    }
+
+    // Clamp to edges
+    if (current < 0) current = 0
+    if (current > 1) current = 1
+
+    embla.scrollTo(current, true)
+    rafIdRef.current = requestAnimationFrame(frame)
+  }, [api, direction])
+
+  const start = React.useCallback(() => {
+    const embla = api
+    if (!embla) return
+    if (pressedRef.current) return
+    pressedRef.current = true
+    ;(frame as any).prev = undefined
+    rafIdRef.current = requestAnimationFrame(frame)
+  }, [api, frame])
+
+  const stop = React.useCallback(() => {
+    pressedRef.current = false
+    if (rafIdRef.current != null) {
+      cancelAnimationFrame(rafIdRef.current)
+      rafIdRef.current = null
+    }
+  }, [])
+
+  // Stop loop on reInit/select so we don't fight snapping or stale API
+  React.useEffect(() => {
+    const embla = api
+    if (!embla) return
+    const handle = () => {
+      pressedRef.current = false
+      if (rafIdRef.current != null) {
+        cancelAnimationFrame(rafIdRef.current)
+        rafIdRef.current = null
+      }
+    }
+    embla.on("reInit", handle)
+    embla.on("select", handle)
+    return () => {
+      embla.off("reInit", handle)
+      embla.off("select", handle)
+      handle()
+    }
+  }, [api])
+
+  return { start, stop }
+}
+
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const { start, stop } = useHoldToScroll("prev")
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    // Start for mouse left button, or for touch/pen (button is often -1)
+    if (e.pointerType === "mouse" && e.button !== 0) return
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+    start()
+  }
+  const handlePointerUp = (e: React.PointerEvent) => {
+    stop()
+  }
+  const handlePointerLeave = () => {
+    stop()
+  }
+  const handlePointerCancel = () => {
+    stop()
+  }
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault()
+      start()
+    }
+  }
+  const handleKeyUp = (e: React.KeyboardEvent) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault()
+      stop()
+    }
+  }
+  const handleBlur = () => stop()
 
   return (
     <Button
@@ -211,7 +319,15 @@ const CarouselPrevious = React.forwardRef<
         className
       )}
       disabled={!canScrollPrev}
+      // Preserve click-to-step. If a hold occurred, Embla will have moved smoothly already.
       onClick={scrollPrev}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerLeave}
+      onPointerCancel={handlePointerCancel}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      onBlur={handleBlur}
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
@@ -226,6 +342,35 @@ const CarouselNext = React.forwardRef<
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const { start, stop } = useHoldToScroll("next")
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+    start()
+  }
+  const handlePointerUp = (e: React.PointerEvent) => {
+    stop()
+  }
+  const handlePointerLeave = () => {
+    stop()
+  }
+  const handlePointerCancel = () => {
+    stop()
+  }
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault()
+      start()
+    }
+  }
+  const handleKeyUp = (e: React.KeyboardEvent) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault()
+      stop()
+    }
+  }
+  const handleBlur = () => stop()
 
   return (
     <Button
@@ -240,7 +385,15 @@ const CarouselNext = React.forwardRef<
         className
       )}
       disabled={!canScrollNext}
+      // Preserve click-to-step alongside hold behavior
       onClick={scrollNext}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerLeave}
+      onPointerCancel={handlePointerCancel}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      onBlur={handleBlur}
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
