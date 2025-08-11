@@ -131,6 +131,74 @@ const clients = [
 		name: "Postos Mirian",
 		logo: "./lovable-uploads/c5d450b6-82ce-45a8-9255-555dbc6ebc90.png",
 	},
+	{
+		name: "MS Extintores",
+		logo: "./lovable-uploads/MSExtintores.png",
+	},
+	{
+		name: "Fazenda Caiman",
+		logo: "./lovable-uploads/Fazendacaiman.png",
+	},
+	{
+		name: "Bluefit",
+		logo: "./lovable-uploads/bluefit.png",
+	},
+	{
+		name: "Casa Cor MS",
+		logo: "./lovable-uploads/casacorms.png",
+	},
+	{
+		name: "Soldamaq",
+		logo: "./lovable-uploads/soldamaq.png",
+	},
+	{
+		name: "Vibra Energia",
+		logo: "./lovable-uploads/vibraenergia.jpg",
+	},
+	{
+		name: "Viação Cruzeiro do Sul",
+		logo: "./lovable-uploads/cruzeirodosul.png",
+	},
+	{
+		name: "Comunidade Cristã Aliançados",
+		logo: "./lovable-uploads/aliancados.png",
+	},
+	{
+		name: "Hospital Adventista do Pênfigo",
+		logo: "./lovable-uploads/penfigo.png",
+	},
+	{
+		name: "Hospital São Julião",
+		logo: "./lovable-uploads/saojuliao.png",
+	},
+	{
+		name: "Ministério Atos de Justiça",
+		logo: "./lovable-uploads/atosdejustica.png",
+	},
+	{
+		name: "FEMSA",
+		logo: "./lovable-uploads/Coca-Cola_Femsa_Logo.png",
+	},
+	{
+		name: "Instituto FHN (Fernando Henrique Novaes)",
+		logo: "./lovable-uploads/institutofhn.png",
+	},
+	{
+		name: "Paróquia Imaculado Coração de Maria",
+		logo: "./lovable-uploads/imaculadocoracaodemaria.png",
+	},
+	{
+		name: "BRD Distribuidora",
+		logo: "./lovable-uploads/brddistribuidora.png",
+	},
+	{
+		name: "Flor de Araça Espaço de Eventos",
+		logo: "./lovable-uploads/flordearaca.png",
+	},
+	{
+		name: "Vepesa Pneus",
+		logo: "./lovable-uploads/vepesapneus.png",
+	},
 ];
 
 const Projects = () => {
@@ -196,7 +264,7 @@ const Projects = () => {
 				} else {
 					scrollNext();
 				}
-			}, 800); // Scroll every 800ms for smooth continuous movement
+			}, 500); // Scroll every 500ms for smooth continuous movement
 		},
 		[scrollPrev, scrollNext]
 	);
