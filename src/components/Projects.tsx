@@ -1,6 +1,11 @@
-import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useEffect, useMemo, useState } from "react";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const clients = [
 	{
@@ -204,152 +209,28 @@ const clients = [
 const Projects = () => {
 	const [isMobile, setIsMobile] = useState(false);
 
-	// Check if device is mobile
 	useEffect(() => {
-		const checkIsMobile = () => {
-			setIsMobile(window.innerWidth < 768);
-		};
-
+		const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
 		checkIsMobile();
 		window.addEventListener("resize", checkIsMobile);
-
-		return () => {
-			window.removeEventListener("resize", checkIsMobile);
-		};
+		return () => window.removeEventListener("resize", checkIsMobile);
 	}, []);
 
-	// Configure carousel options based on device type
-	const [emblaRef, emblaApi] = useEmblaCarousel({
-		loop: true,
-		dragFree: true,
-		align: "start",
-		slidesToScroll: 1,
-	});
+	const { pages, gridColsClass } = useMemo(() => {
+		const columns = 5; // always 5 columns per your request
+		const rows = 2; // always 2 rows as requested
+		const pageSize = columns * rows;
 
-	const scrollPrev = useCallback(() => {
-		if (emblaApi) emblaApi.scrollPrev();
-	}, [emblaApi]);
-
-	const scrollNext = useCallback(() => {
-		if (emblaApi) emblaApi.scrollNext();
-	}, [emblaApi]);
-
-	// Continuous scrolling functionality
-	const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
-	const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
-
-	const startContinuousScroll = useCallback(
-		(direction: "prev" | "next") => {
-			// Clear any existing intervals
-			if (scrollIntervalRef.current) {
-				clearInterval(scrollIntervalRef.current);
-				scrollIntervalRef.current = null;
-			}
-			if (autoplayIntervalRef.current) {
-				clearInterval(autoplayIntervalRef.current);
-				autoplayIntervalRef.current = null;
-			}
-
-			// Immediate first scroll for responsiveness
-			if (direction === "prev") {
-				scrollPrev();
-			} else {
-				scrollNext();
-			}
-
-			// Start continuous scrolling with consistent timing
-			scrollIntervalRef.current = setInterval(() => {
-				if (direction === "prev") {
-					scrollPrev();
-				} else {
-					scrollNext();
-				}
-			}, 500); // Scroll every 500ms for smooth continuous movement
-		},
-		[scrollPrev, scrollNext]
-	);
-
-	const stopContinuousScroll = useCallback(() => {
-		if (scrollIntervalRef.current) {
-			clearInterval(scrollIntervalRef.current);
-			scrollIntervalRef.current = null;
+		const pages: { name: string; logo: string }[][] = [];
+		for (let i = 0; i < clients.length; i += pageSize) {
+			pages.push(clients.slice(i, i + pageSize));
 		}
-	}, []);
 
-	// Cleanup interval on unmount
-	useEffect(() => {
-		return () => {
-			if (scrollIntervalRef.current) {
-				clearInterval(scrollIntervalRef.current);
-			}
-			if (autoplayIntervalRef.current) {
-				clearInterval(autoplayIntervalRef.current);
-			}
+		return {
+			pages,
+			gridColsClass: "grid-cols-5",
 		};
-	}, []);
-
-	useEffect(() => {
-		if (!emblaApi) return;
-
-		const autoplay = () => {
-			// Don't autoplay if continuous scrolling is active
-			if (scrollIntervalRef.current) return;
-
-			if (emblaApi.canScrollNext()) {
-				emblaApi.scrollNext();
-			} else {
-				emblaApi.scrollTo(0);
-			}
-		};
-
-		const interval = setInterval(autoplay, 3000);
-		autoplayIntervalRef.current = interval;
-
-		const onPointerDown = () => {
-			clearInterval(interval);
-			autoplayIntervalRef.current = null;
-		};
-
-		emblaApi.on("pointerDown", onPointerDown);
-
-		return () => {
-			clearInterval(interval);
-			autoplayIntervalRef.current = null;
-			if (emblaApi) {
-				emblaApi.off("pointerDown", onPointerDown);
-			}
-		};
-	}, [emblaApi]);
-
-	// Prepare slides - for mobile show 1 per slide, for desktop show 2 per slide
-	const prepareSlides = () => {
-		if (isMobile) {
-			return clients.map((client) => [client]);
-		} else {
-			const slides = [];
-			for (let i = 0; i < clients.length; i += 2) {
-				slides.push([
-					clients[i],
-					i + 1 < clients.length ? clients[i + 1] : null,
-				]);
-			}
-			return slides;
-		}
-	};
-
-	const slides = prepareSlides();
-
-	const renderClient = (client: { name: string; logo: string } | null) => {
-		if (!client) return null;
-
-		return (
-			<img
-				src={client.logo}
-				alt={client.name}
-				className="w-full h-full object-contain"
-			/>
-		);
-	};
+	}, [isMobile]);
 
 	return (
 		<section id="clientes" className="section-padding bg-secondary">
@@ -373,59 +254,34 @@ const Projects = () => {
 					</p>
 				</div>
 
-				<div className="relative px-8 md:px-16">
-					<div className="overflow-hidden" ref={emblaRef}>
-						<div className="flex">
-							{slides.map((slide, slideIndex) => (
-								<div
-									key={slideIndex}
-									className={`flex-none mx-2 md:mx-4 flex ${
-										isMobile ? "w-64" : ""
-									} flex-col gap-4`}
-									style={{ flex: isMobile ? "0 0 auto" : "" }}
-								>
-									{slide.map(
-										(client, index) =>
-											client && (
-												<div
-													key={`${slideIndex}-${index}`}
-													className="h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
-													style={{ width: isMobile ? "100%" : "12rem" }}
-												>
-													{renderClient(client)}
-												</div>
-											)
-									)}
-								</div>
+				<div className="relative px-4 md:px-8">
+					<Carousel
+						opts={{ loop: true, align: "start", dragFree: false }}
+						className="w-full"
+					>
+						<CarouselContent>
+							{pages.map((page, pageIndex) => (
+								<CarouselItem key={pageIndex} className="basis-full">
+									<div className={`grid ${gridColsClass} grid-rows-2 gap-4`}>
+										{page.map((client, idx) => (
+											<div
+												key={`${pageIndex}-${idx}`}
+												className="h-24 bg-white rounded-lg shadow-md flex items-center justify-center p-4 transition-transform hover:scale-105"
+											>
+												<img
+													src={client.logo}
+													alt={client.name}
+													className="w-full h-full object-contain"
+												/>
+											</div>
+										))}
+									</div>
+								</CarouselItem>
 							))}
-						</div>
-					</div>
-
-					<button
-						onClick={scrollPrev}
-						onMouseDown={() => startContinuousScroll("prev")}
-						onMouseUp={stopContinuousScroll}
-						onMouseLeave={stopContinuousScroll}
-						onTouchStart={() => startContinuousScroll("prev")}
-						onTouchEnd={stopContinuousScroll}
-						className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors z-10"
-						aria-label="Previous slide"
-					>
-						<ChevronLeft className="w-6 h-6 text-primary" />
-					</button>
-
-					<button
-						onClick={scrollNext}
-						onMouseDown={() => startContinuousScroll("next")}
-						onMouseUp={stopContinuousScroll}
-						onMouseLeave={stopContinuousScroll}
-						onTouchStart={() => startContinuousScroll("next")}
-						onTouchEnd={stopContinuousScroll}
-						className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors z-10"
-						aria-label="Next slide"
-					>
-						<ChevronRight className="w-6 h-6 text-primary" />
-					</button>
+						</CarouselContent>
+						<CarouselPrevious className="left-0 top-1/2 -translate-y-1/2 bg-white text-primary shadow-md hover:bg-gray-50" />
+						<CarouselNext className="right-0 top-1/2 -translate-y-1/2 bg-white text-primary shadow-md hover:bg-gray-50" />
+					</Carousel>
 				</div>
 			</div>
 		</section>
