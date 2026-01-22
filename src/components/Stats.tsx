@@ -1,7 +1,7 @@
 
 const stats = [
-  { number: "70+", label: "Projetos em todo o Brasil" },
-  { number: "124.000+", label: "m² de área protegida" },
+  { number: "300+", label: "Projetos em todo o Brasil" },
+  { number: "500.000+", label: "m² de área protegida" },
 ];
 
 const Stats = () => {
