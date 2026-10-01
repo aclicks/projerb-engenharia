@@ -34,9 +34,7 @@ const Contact = () => {
             <div>
               <h4 className="font-citrine font-bold text-lg mb-2" style={{ fontFamily: "citrine-variable", fontVariationSettings: '"wght" 700' }}>ENDEREÇO</h4>
               <p className="text-white/80">
-                R. José Dibo, 63<br />
-                Jardim dos Estados<br />
-                Campo Grande MS
+                Rua Pernambuco, 2168 — Campo Grande, MS
               </p>
             </div>
 
